@@ -14,7 +14,7 @@ def solve():
 	increased = 0
 	decreased = 0
 	for line in lines:
-		currDepth = int(line.strip())
+		currDepth = int(line)
 		if prevDepth is None:
 			prevDepth = currDepth
 			continue
