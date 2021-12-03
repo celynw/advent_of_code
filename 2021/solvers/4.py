@@ -9,6 +9,7 @@ import utils
 def solve():
 	lines = utils.read_puzzle_input(Path(__file__))
 	debug(f"Number of commands: {len(lines)}")
+
 	distance = 0
 	aim = 0
 	depth = 0
