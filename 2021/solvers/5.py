@@ -16,9 +16,9 @@ def solve():
 			indices[i] = indices.get(i, 0) + int(n)
 	gammaRate = []
 	epsilonRate = []
-	for k, v in indices.items():
-		gammaRate.append(int(v > len(lines) - v))
-		epsilonRate.append(int(v < len(lines) - v))
+	for index in indices.values():
+		gammaRate.append(int(index > len(lines) - index))
+		epsilonRate.append(int(index < len(lines) - index))
 	gammaRate = int("".join(map(str, gammaRate)), 2)
 	epsilonRate = int("".join(map(str, epsilonRate)), 2)
 
