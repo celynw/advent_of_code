@@ -25,8 +25,3 @@ def solve():
 	info(f"gammaRate: {gammaRate}")
 	info(f"epsilonRate: {epsilonRate}")
 	info(f"Power consumption: {gammaRate * epsilonRate}")
-
-
-# ==================================================================================================
-if __name__ == "__main__":
-	solve()

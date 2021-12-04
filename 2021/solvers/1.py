@@ -26,8 +26,3 @@ def solve():
 
 	info(f"increased: {increased}")
 	info(f"decreased: {decreased}")
-
-
-# ==================================================================================================
-if __name__ == "__main__":
-	solve()

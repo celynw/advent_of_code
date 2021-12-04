@@ -26,8 +26,3 @@ def solve():
 	info(f"Final distance: {distance}")
 	info(f"Final depth: {depth}")
 	info(f"Multiplied: {distance * depth}")
-
-
-# ==================================================================================================
-if __name__ == "__main__":
-	solve()

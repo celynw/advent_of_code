@@ -33,8 +33,3 @@ def get_common(values: List[int]) -> int:
 	assert len(values) > 0
 
 	return int(sum(values) >= len(values) - sum(values))
-
-
-# ==================================================================================================
-if __name__ == "__main__":
-	solve()
