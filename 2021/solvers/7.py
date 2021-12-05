@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-from pathlib import Path
+from typing import List
 
 import numpy as np
 from kellog import info, warning, error, debug
 
-import utils
-
 # ==================================================================================================
-def solve() -> int:
-	lines = utils.read_puzzle_input(Path(__file__))
+def solve(lines: List[str]):
 	numbers = [int(n) for n in lines.pop(0).split(",")]
 
 	cells = []

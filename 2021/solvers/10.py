@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-from pathlib import Path
+from typing import List
 
 import numpy as np
 from kellog import info, warning, error, debug
 
-import utils
-
 # ==================================================================================================
-def solve():
-	lines = utils.read_puzzle_input(Path(__file__))
+def solve(lines: List[str]):
 	debug(f"Total number of vents: {len(lines)}")
 
 	vents = []

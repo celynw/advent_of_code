@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 import argparse
 import importlib
+from pathlib import Path
+
+import utils
 
 # ==================================================================================================
 def main(args: argparse.Namespace):
 	solver = importlib.import_module(f"solvers.{args.day}")
-	solver.solve()
+	lines = utils.read_input(Path(solver.__file__), args.test)
+	solver.solve(lines)
 
 
 # ==================================================================================================
