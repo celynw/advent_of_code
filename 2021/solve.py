@@ -11,11 +11,18 @@ def main(args: argparse.Namespace):
 	lines = utils.read_input(Path(solver.__file__), args.test)
 	result = solver.solve(lines)
 
+	if args.test:
+		with open(Path(__file__).parent / "examples" / "answers.txt", "r") as file:
+			answers = file.read().splitlines()
+		status = "[PASS]" if int(answers[args.puzzle - 1]) == result else "[FAIL]"
+		print(f"{status} {int(answers[args.puzzle - 1])} vs. {result}")
+
 
 # ==================================================================================================
 def parse_args():
 	parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("puzzle", type=int, help="Puzzle number (2 per day)")
+	parser.add_argument("--test", "-t", action="store_true", help="Run with the test input")
 
 	return parser.parse_args()
 
