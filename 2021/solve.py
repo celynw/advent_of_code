@@ -3,6 +3,8 @@ import argparse
 import importlib
 from pathlib import Path
 
+from colorama import Fore
+
 import utils
 
 # ==================================================================================================
@@ -14,7 +16,8 @@ def main(args: argparse.Namespace):
 	if args.test:
 		with open(Path(__file__).parent / "examples" / "answers.txt", "r") as file:
 			answers = file.read().splitlines()
-		status = "[PASS]" if int(answers[args.puzzle - 1]) == result else "[FAIL]"
+		success = int(answers[args.puzzle - 1]) == result
+		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if success else f"{Fore.RED}[FAIL]{Fore.RESET}"
 		print(f"{status} {int(answers[args.puzzle - 1])} vs. {result}")
 
 
