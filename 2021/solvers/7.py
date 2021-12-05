@@ -7,6 +7,7 @@ from kellog import info, warning, error, debug
 # ==================================================================================================
 def solve(lines: List[str]) -> int:
 	numbers = [int(n) for n in lines.pop(0).split(",")]
+	debug(f"Number of numbers: {len(numbers)}")
 
 	cells = []
 	for line in lines:
@@ -14,6 +15,7 @@ def solve(lines: List[str]) -> int:
 			cells += [int(n) for n in line.split(" ") if n != ""]
 	cells = np.array(cells)
 	cells = cells.reshape((-1, 5, 5))
+	debug(f"Number of boards: {cells.shape[0]}")
 
 	score = None
 	for number in numbers:

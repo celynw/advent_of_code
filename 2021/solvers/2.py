@@ -28,4 +28,7 @@ def solve(lines: List[str]) -> int:
 			decreased += 1
 		prevWindow = currWindow
 
+	info(f"Decreased: {decreased}")
+	info(f"Increased: {increased}")
+
 	return increased

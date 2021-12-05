@@ -21,4 +21,7 @@ def solve(lines: List[str]) -> int:
 			decreased += 1
 		prevDepth = currDepth
 
+	info(f"Decreased: {decreased}")
+	info(f"Increased: {increased}")
+
 	return increased
