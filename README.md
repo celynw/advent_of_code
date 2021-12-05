@@ -19,8 +19,14 @@ pip install -r requirements.txt
 
 where `PUZZLE` goes from `0` to `50`.
 
-Example:
+```
+$ ./2021/solve.py --help
+usage: solve.py [-h] [--test] puzzle
 
-```bash
-./2021/solve.py 25
+positional arguments:
+  puzzle      Puzzle number (2 per day)
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --test, -t  Run with the test input and test against the answer (default: False)
 ```
