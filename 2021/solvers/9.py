@@ -22,8 +22,10 @@ def solve():
 
 	for vent in vents:
 		if vent[0] == vent[2] or vent[1] == vent[3]:
-			xMin, xMax = sorted((vent[0], vent[2]))
-			yMin, yMax = sorted((vent[1], vent[3]))
-			bed[yMin:yMax + 1, xMin:xMax + 1] += 1
+			xStep = 1 if vent[2] >= vent[0] else -1
+			yStep = 1 if vent[3] >= vent[1] else -1
+			vent[2] += xStep
+			vent[3] += yStep
+			bed[vent[1]:vent[3]:yStep, vent[0]:vent[2]:xStep] += 1
 
 	info(f"Number of dangerous vents: {len(bed[bed > 1])}")
