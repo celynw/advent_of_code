@@ -9,7 +9,7 @@ import utils
 def main(args: argparse.Namespace):
 	solver = importlib.import_module(f"solvers.{args.puzzle}")
 	lines = utils.read_input(Path(solver.__file__), args.test)
-	solver.solve(lines)
+	result = solver.solve(lines)
 
 
 # ==================================================================================================

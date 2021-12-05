@@ -4,7 +4,7 @@ from typing import List
 from kellog import info, warning, error, debug
 
 # ==================================================================================================
-def solve(lines: List[str]):
+def solve(lines: List[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
 	oxygenRating = lines
@@ -22,6 +22,8 @@ def solve(lines: List[str]):
 	info(f"oxygenRating: {oxygenRating}")
 	info(f"co2Rating: {co2Rating}")
 	info(f"Life Support Rating: {oxygenRating * co2Rating}")
+
+	return oxygenRating * co2Rating
 
 
 # ==================================================================================================

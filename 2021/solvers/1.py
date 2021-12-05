@@ -4,7 +4,7 @@ from typing import List
 from kellog import info, warning, error, debug
 
 # ==================================================================================================
-def solve(lines: List[str]):
+def solve(lines: List[str]) -> int:
 	debug(f"Number of depth measurements: {len(lines)}")
 
 	prevDepth = None
@@ -21,5 +21,4 @@ def solve(lines: List[str]):
 			decreased += 1
 		prevDepth = currDepth
 
-	info(f"increased: {increased}")
-	info(f"decreased: {decreased}")
+	return increased

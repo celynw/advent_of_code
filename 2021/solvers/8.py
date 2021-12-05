@@ -5,7 +5,7 @@ import numpy as np
 from kellog import info, warning, error, debug
 
 # ==================================================================================================
-def solve(lines: List[str]):
+def solve(lines: List[str]) -> int:
 	numbers = [int(n) for n in lines.pop(0).split(",")]
 
 	cells = []
@@ -36,3 +36,5 @@ def solve(lines: List[str]):
 	board = cells.squeeze(0)
 	score = board[board != -1].sum() * number
 	info(f"Score: {score}")
+
+	return score

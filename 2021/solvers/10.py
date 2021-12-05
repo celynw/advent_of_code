@@ -5,7 +5,7 @@ import numpy as np
 from kellog import info, warning, error, debug
 
 # ==================================================================================================
-def solve(lines: List[str]):
+def solve(lines: List[str]) -> int:
 	debug(f"Total number of vents: {len(lines)}")
 
 	vents = []
@@ -31,3 +31,5 @@ def solve(lines: List[str]):
 				bed[y, x] += 1
 
 	info(f"Number of dangerous vents: {len(bed[bed > 1])}")
+
+	return len(bed[bed > 1])

@@ -4,7 +4,7 @@ from typing import List
 from kellog import info, warning, error, debug
 
 # ==================================================================================================
-def solve(lines: List[str]):
+def solve(lines: List[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
 	indices = {}
@@ -22,3 +22,5 @@ def solve(lines: List[str]):
 	info(f"gammaRate: {gammaRate}")
 	info(f"epsilonRate: {epsilonRate}")
 	info(f"Power consumption: {gammaRate * epsilonRate}")
+
+	return gammaRate * epsilonRate
