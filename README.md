@@ -6,6 +6,7 @@ Written in python for fun.
 
 - `kellog`: just for convenient and pretty console messages
 - `numpy`: For reshaping/slicing arrays and such
+- `colorama`: For console output clarity
 
 ```bash
 pip install -r requirements.txt
