@@ -13,7 +13,8 @@ def solve(lines: list[str]) -> int:
 			calories += int(line)
 	all_calories.append(calories)
 
-	max_calories = max(all_calories)
-	print(max_calories)
+	all_calories = sorted(all_calories)
+	top_calories = sum(all_calories[-3:])
+	print(top_calories)
 
-	return max_calories
+	return top_calories
