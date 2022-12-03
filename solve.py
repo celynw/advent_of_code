@@ -14,7 +14,7 @@ def main(args: argparse.Namespace):
 	result = solver.solve(lines)
 
 	if args.test:
-		with open(Path(__file__).parent / args.year / "examples" / "answers.txt", "r") as file:
+		with open(Path(__file__).parent / str(args.year) / "examples" / "answers.txt", "r") as file:
 			answers = file.read().splitlines()
 		success = int(answers[args.puzzle - 1]) == result
 		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if success else f"{Fore.RED}[FAIL]{Fore.RESET}"
