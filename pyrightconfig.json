@@ -1,0 +1,18 @@
+{
+	// Included if imported by other files
+	"exclude": [
+		"**/__pycache__/",
+		"**/.mypy_cache/",
+		"**/build/",
+		"**/dist/",
+		"**/node_modules/",
+		"**/venv/",
+	],
+	// Always excluded
+	"ignore": [
+		"**/__pycache__/",
+		"**/.mypy_cache/",
+		"**/build/",
+		"**/dist/",
+	],
+}

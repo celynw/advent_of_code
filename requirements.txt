@@ -1,3 +1,7 @@
-kellog
+pydocstyle
+pycodestyle
+mypy
+# kellog
+rich
 numpy
 colorama

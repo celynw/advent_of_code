@@ -4,10 +4,6 @@ Written in python for fun.
 
 ## Requirements
 
-- `kellog`: just for convenient and pretty console messages
-- `numpy`: For reshaping/slicing arrays and such
-- `colorama`: For console output clarity
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -15,16 +11,17 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-./2021/solve.py PUZZLE
+./solve.py YEAR PUZZLE
 ```
 
-where `PUZZLE` goes from `0` to `50`.
+where `YEAR` is `2021` onwards, and `PUZZLE` goes from `0` to `50`.
 
 ```
 $ ./2021/solve.py --help
-usage: solve.py [-h] [--test] puzzle
+usage: solve.py [-h] [--test] year puzzle
 
 positional arguments:
+  year        Year of puzzle
   puzzle      Puzzle number (2 per day)
 
 optional arguments:
