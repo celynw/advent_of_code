@@ -16,9 +16,12 @@ def main(args: argparse.Namespace):
 	if args.test:
 		with open(Path(__file__).parent / str(args.year) / "examples" / "answers.txt", "r") as file:
 			answers = file.read().splitlines()
-		success = int(answers[args.puzzle - 1]) == result
-		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if success else f"{Fore.RED}[FAIL]{Fore.RESET}"
-		print(f"{status} {int(answers[args.puzzle - 1])} vs. {result}")
+		try:
+			answer = int(answers[args.puzzle - 1])
+		except ValueError:
+			answer = answers[args.puzzle - 1]
+		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if answer == result else f"{Fore.RED}[FAIL]{Fore.RESET}"
+		print(f"{status} {answer} vs. {result}")
 
 
 # ==================================================================================================
