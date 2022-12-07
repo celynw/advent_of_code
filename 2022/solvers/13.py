@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 from rich import print, inspect
 
-answers = []
+sizes = []
 
 # ==================================================================================================
 def solve(lines: list[str]) -> int:
 	tree, size = explore(lines)
-	print(sum(answers))
 	if size < 100000:
-		answers.append(size)
+		sizes.append(size)
+	print(sum(sizes))
 
-	return sum(answers)
+	return sum(sizes)
 
 
 # ==================================================================================================
@@ -27,7 +27,7 @@ def explore(lines: list[str]) -> tuple[dict, int]:
 			else:
 				tree[directory] = explore(lines)
 				if tree[directory][1] < 100000:
-					answers.append(tree[directory][1])
+					sizes.append(tree[directory][1])
 				size += tree[directory][1] # Accumulate contained size
 		elif line.startswith("$ ls"):
 			size = 0
