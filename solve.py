@@ -2,7 +2,9 @@
 import argparse
 import importlib
 from pathlib import Path
+from typing import cast
 
+import colored_traceback.auto  # noqa: F401
 from colorama import Fore
 
 import utils
@@ -10,8 +12,13 @@ import utils
 
 # ======================================================================================================================
 def _main(args: argparse.Namespace) -> None:
-	solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
-	lines = utils.read_input(Path(solver.__file__), args.test)
+	try:
+		solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
+	except ModuleNotFoundError as e:
+		msg = f"Solver {args.year}.solvers.{args.puzzle} not found"
+		raise ModuleNotFoundError(msg) from e
+
+	lines = utils.read_input(Path(cast(str, solver.__file__)), args.test)
 	result = solver.solve(lines)
 
 	if args.test:
@@ -22,7 +29,7 @@ def _main(args: argparse.Namespace) -> None:
 		except ValueError:
 			answer = answers[args.puzzle - 1]
 		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if answer == result else f"{Fore.RED}[FAIL]{Fore.RESET}"
-		print(f"{status} {answer} vs. {result}")
+		print(f"{status} {answer} vs. {result}")  # noqa: T201
 
 
 # ======================================================================================================================
