@@ -7,14 +7,15 @@ from colorama import Fore
 
 import utils
 
-# ==================================================================================================
-def main(args: argparse.Namespace):
+
+# ======================================================================================================================
+def _main(args: argparse.Namespace) -> None:
 	solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
 	lines = utils.read_input(Path(solver.__file__), args.test)
 	result = solver.solve(lines)
 
 	if args.test:
-		with open(Path(__file__).parent / str(args.year) / "examples" / "answers.txt", "r") as file:
+		with (Path(__file__).parent / str(args.year) / "examples" / "answers.txt").open() as file:
 			answers = file.read().splitlines()
 		try:
 			answer = int(answers[args.puzzle - 1])
@@ -24,8 +25,8 @@ def main(args: argparse.Namespace):
 		print(f"{status} {answer} vs. {result}")
 
 
-# ==================================================================================================
-def parse_args():
+# ======================================================================================================================
+def _parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("year", type=int, help="Year of puzzle")
 	parser.add_argument("puzzle", type=int, help="Puzzle number (2 per day)")
@@ -34,6 +35,6 @@ def parse_args():
 	return parser.parse_args()
 
 
-# ==================================================================================================
+# ======================================================================================================================
 if __name__ == "__main__":
-	main(parse_args())
+	_main(_parse_args())
