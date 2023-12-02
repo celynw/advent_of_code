@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 where `YEAR` is `2021` onwards, and `PUZZLE` goes from `0` to `50`.
 
-```
+```text
 $ ./2021/solve.py --help
 usage: solve.py [-h] [--test] year puzzle
 
