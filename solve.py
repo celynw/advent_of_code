@@ -2,30 +2,38 @@
 import argparse
 import importlib
 from pathlib import Path
+from typing import cast
 
+import colored_traceback.auto  # noqa: F401
 from colorama import Fore
 
 import utils
 
-# ==================================================================================================
-def main(args: argparse.Namespace):
-	solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
-	lines = utils.read_input(Path(solver.__file__), args.test)
+
+# ======================================================================================================================
+def _main(args: argparse.Namespace) -> None:
+	try:
+		solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
+	except ModuleNotFoundError as e:
+		msg = f"Solver {args.year}.solvers.{args.puzzle} not found"
+		raise ModuleNotFoundError(msg) from e
+
+	lines = utils.read_input(Path(cast(str, solver.__file__)), args.test)
 	result = solver.solve(lines)
 
 	if args.test:
-		with open(Path(__file__).parent / str(args.year) / "examples" / "answers.txt", "r") as file:
+		with (Path(__file__).parent / str(args.year) / "examples" / "answers.txt").open() as file:
 			answers = file.read().splitlines()
 		try:
 			answer = int(answers[args.puzzle - 1])
 		except ValueError:
 			answer = answers[args.puzzle - 1]
 		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if answer == result else f"{Fore.RED}[FAIL]{Fore.RESET}"
-		print(f"{status} {answer} vs. {result}")
+		print(f"{status} {answer} vs. {result}")  # noqa: T201
 
 
-# ==================================================================================================
-def parse_args():
+# ======================================================================================================================
+def _parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("year", type=int, help="Year of puzzle")
 	parser.add_argument("puzzle", type=int, help="Puzzle number (2 per day)")
@@ -34,6 +42,6 @@ def parse_args():
 	return parser.parse_args()
 
 
-# ==================================================================================================
+# ======================================================================================================================
 if __name__ == "__main__":
-	main(parse_args())
+	_main(_parse_args())

@@ -1,0 +1,9 @@
+{
+	// To be overridden by ruff.toml
+	"ruff.format.args": [],
+	"ruff.lint.args": [],
+	"editor.insertSpaces": false,
+	"[yml]": {
+		"editor.insertSpaces": true,
+	},
+}

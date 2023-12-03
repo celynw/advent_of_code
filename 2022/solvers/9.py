@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from pickletools import stackslice
 from rich import print, inspect
 
 # ==================================================================================================

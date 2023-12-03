@@ -1,6 +1,8 @@
 # My solutions for [Advent of Code](https://adventofcode.com/)
 
-Written in python for fun.
+![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/celynw/advent_of_code/2021%2Fsolvers?type=file&extension=py&label=2021%20progress)\
+![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/celynw/advent_of_code/2022%2Fsolvers?type=file&extension=py&label=2022%20progress)\
+![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/celynw/advent_of_code/2023%2Fsolvers?type=file&extension=py&label=2023%20progress)
 
 ## Requirements
 
@@ -16,7 +18,7 @@ pip install -r requirements.txt
 
 where `YEAR` is `2021` onwards, and `PUZZLE` goes from `0` to `50`.
 
-```
+```text
 $ ./2021/solve.py --help
 usage: solve.py [-h] [--test] year puzzle
 

@@ -1,7 +1,4 @@
-pydocstyle
-pycodestyle
-mypy
-# kellog
 rich
 numpy
 colorama
+colored_traceback
