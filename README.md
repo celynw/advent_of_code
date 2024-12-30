@@ -22,14 +22,16 @@ uv pip install .
 where `YEAR` is `2021` onwards, and `PUZZLE` goes from `0` to `50`.
 
 ```text
-$ ./2021/solve.py --help
-usage: solve.py [-h] [--test] year puzzle
+$ ./solve.py --help
 
-positional arguments:
-  year        Year of puzzle
-  puzzle      Puzzle number (2 per day)
+ Usage: solve.py [OPTIONS] YEAR PUZZLE
 
-optional arguments:
-  -h, --help  show this help message and exit
-  --test, -t  Run with the test input and test against the answer (default: False)
+╭─ Arguments ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *    year        INTEGER  Year of puzzle [default: None] [required]                                                                                                                                              │
+│ *    puzzle      INTEGER  Puzzle number (2 per day) [default: None] [required]                                                                                                                                   │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --test  -t        Run with the test input and test against the answer                                                                                                                                            │
+│ --help            Show this message and exit.                                                                                                                                                                    │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
