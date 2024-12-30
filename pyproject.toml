@@ -37,21 +37,22 @@ line-length = 120
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-	"W191",   # Indentation contains tabs
-	"D212",   # Multi-line docstring summary should start at the first line
-	"D203",   # 1 blank line required before class docstring
-	"D413",   # Missing blank line after last section
-	"TD003",  # Missing issue link on the line following this TODO
-	"INP001", # File {filename} is part of an implicit namespace package. Add an __init__.py.
-	"D100",   # Missing docstring in public module
-	"E741",   # Ambiguous variable name: {name}
 	"CPY001", # Missing copyright notice at top of file
+	"D100",   # Missing docstring in public module
+	"D203",   # 1 blank line required before class docstring
+	"D206",   # Docstring should be indented with spaces, not tabs
+	"D212",   # Multi-line docstring summary should start at the first line
+	"D413",   # Missing blank line after last section
+	"E741",   # Ambiguous variable name: {name}
+	"INP001", # File {filename} is part of an implicit namespace package. Add an __init__.py.
 	"T201",   # `print` found
+	"TD003",  # Missing issue link on the line following this TODO
+	"W191",   # Indentation contains tabs
 ]
 unfixable = [
+	"B007", # Loop control variable {name} not used within loop body
 	"F401", # {name} imported but unused; consider using importlib.util.find_spec to test for availability
 	"F841", # Local variable {name} is assigned to but never used
-	"B007", # Loop control variable {name} not used within loop body
 ]
 
 [tool.ruff.format]
@@ -66,10 +67,10 @@ allow-magic-value-types = ["str", "bytes", "int"]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = [
+	"D100",   # Missing docstring in public module
+	"INP001", # Use of assert detected
 	"S101",   # Use of assert detected
 	"SLF001", # Private member accessed
-	"INP001", # Use of assert detected
-	"D100",   # Missing docstring in public module
 ]
 "__init__.py" = [
 	"F401", # Imported but unused
