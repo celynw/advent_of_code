@@ -7,26 +7,14 @@ from typing import cast
 from colorama import Fore
 
 
-def get_puzzle_path(path: Path, index: str, test: bool = False):
-	parent = "examples" if test else "puzzle_input"
-
-	return path.parent.parent / parent / f"{index}.txt"
-
-
-def read_input(path: Path, test: bool = False):
-	path = get_puzzle_path(path, path.stem, test)
-	with open(path) as file:
-		return file.read().splitlines()
-
-
-def _main(args: argparse.Namespace) -> None:
+def main(args: argparse.Namespace) -> None:
 	try:
 		solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
 	except ModuleNotFoundError as e:
 		msg = f"Solver {args.year}.solvers.{args.puzzle} not found"
 		raise ModuleNotFoundError(msg) from e
 
-	lines = read_input(Path(cast(str, solver.__file__)), args.test)
+	lines = read_input(Path(cast(str, solver.__file__)), test=args.test)
 	result = solver.solve(lines)
 
 	if args.test:
@@ -40,6 +28,18 @@ def _main(args: argparse.Namespace) -> None:
 		print(f"{status} {answer} vs. {result}")
 
 
+def get_puzzle_path(path: Path, index: str, *, test: bool = False):
+	parent = "examples" if test else "puzzle_input"
+
+	return path.parent.parent / parent / f"{index}.txt"
+
+
+def read_input(path: Path, *, test: bool = False):
+	path = get_puzzle_path(path, path.stem, test=test)
+	with path.open() as file:
+		return file.read().splitlines()
+
+
 def _parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("year", type=int, help="Year of puzzle")
@@ -50,4 +50,4 @@ def _parse_args() -> argparse.Namespace:
 
 
 if __name__ == "__main__":
-	_main(_parse_args())
+	main(_parse_args())
