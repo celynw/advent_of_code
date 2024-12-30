@@ -1,4 +1,4 @@
+build/
+*.egg-info
 **/__pycache__
 **/.mypy_cache
-ws.code-workspace
-venv/
