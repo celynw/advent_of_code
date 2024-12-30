@@ -6,7 +6,17 @@ from typing import cast
 
 from colorama import Fore
 
-import utils
+
+def get_puzzle_path(path: Path, index: str, test: bool = False):
+	parent = "examples" if test else "puzzle_input"
+
+	return path.parent.parent / parent / f"{index}.txt"
+
+
+def read_input(path: Path, test: bool = False):
+	path = get_puzzle_path(path, path.stem, test)
+	with open(path) as file:
+		return file.read().splitlines()
 
 
 def _main(args: argparse.Namespace) -> None:
@@ -16,7 +26,7 @@ def _main(args: argparse.Namespace) -> None:
 		msg = f"Solver {args.year}.solvers.{args.puzzle} not found"
 		raise ModuleNotFoundError(msg) from e
 
-	lines = utils.read_input(Path(cast(str, solver.__file__)), args.test)
+	lines = read_input(Path(cast(str, solver.__file__)), args.test)
 	result = solver.solve(lines)
 
 	if args.test:
@@ -27,7 +37,7 @@ def _main(args: argparse.Namespace) -> None:
 		except ValueError:
 			answer = answers[args.puzzle - 1]
 		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if answer == result else f"{Fore.RED}[FAIL]{Fore.RESET}"
-		print(f"{status} {answer} vs. {result}")  # noqa: T201
+		print(f"{status} {answer} vs. {result}")
 
 
 def _parse_args() -> argparse.Namespace:
