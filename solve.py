@@ -26,6 +26,8 @@ def main(args: argparse.Namespace) -> None:
 			answer = answers[args.puzzle - 1]
 		status = f"{Fore.GREEN}[PASS]{Fore.RESET}" if answer == result else f"{Fore.RED}[FAIL]{Fore.RESET}"
 		print(f"{status} {answer} vs. {result}")
+	else:
+		print(result)
 
 
 def get_puzzle_path(path: Path, index: str, *, test: bool = False):
