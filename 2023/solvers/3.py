@@ -6,7 +6,7 @@ query = {
 
 
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	possible_ids = []
 	for line in lines:
 		game, results = line.split(": ")

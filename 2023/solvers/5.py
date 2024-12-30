@@ -2,7 +2,7 @@ import re
 
 
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	part_numbers = []
 	for l, line in enumerate(lines):
 		for m in re.finditer(r"\d+", line):

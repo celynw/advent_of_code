@@ -2,7 +2,7 @@ import re
 
 
 def solve(lines: list[str]) -> int:  # noqa: C901
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	parts = []
 	gears = []
 	for l, line in enumerate(lines):

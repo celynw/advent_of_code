@@ -3,7 +3,7 @@ from functools import reduce
 
 
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	powers = []
 	for line in lines:
 		_, results = line.split(": ")

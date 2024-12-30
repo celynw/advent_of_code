@@ -1,5 +1,5 @@
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	scores = []
 	for line in lines:
 		winning, have = ([int(x) for x in item.split()] for item in line.split(": ")[1].split(" | "))

@@ -3,7 +3,7 @@ N_DIGITS = 2
 
 
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	calibration_values = []
 	for line in lines:
 		calibration_value = ""

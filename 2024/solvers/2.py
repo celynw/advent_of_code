@@ -1,6 +1,6 @@
 def solve(lines: list[str]) -> int:
 	"""
-	Print and return the solution. Called by ../solve.py.
+	Print and return the solution. Called by ../../solve.py.
 
 	Parameters
 	----------

@@ -1,5 +1,5 @@
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	won = {}
 	total = 0
 	for l, line in enumerate(lines):

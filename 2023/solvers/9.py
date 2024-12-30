@@ -1,5 +1,5 @@
 def solve(lines: list[str]) -> int:
-	"""Print and return the solution. Called by ../solve.py."""
+	"""Print and return the solution. Called by ../../solve.py."""
 	targets = [int(s) for s in lines.pop(0).split(" ")[1:]]
 	maps = parse(lines)
 
