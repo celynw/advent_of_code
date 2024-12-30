@@ -1,0 +1,76 @@
+[project]
+name = "advent_of_code"
+version = "0.0.1"
+description = "Solutions to Advent of Code"
+readme = "README.md"
+authors = [
+	{ name = "celynw", email = "3299161+celynw@users.noreply.github.com" },
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = ["kellog", "numpy", "rich"]
+keywords = []
+classifiers = [
+	"Development Status :: 4 - Beta",
+	"Environment :: Console",
+	"Intended Audience :: Developers",
+	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+	"Natural Language :: English",
+	"Topic :: Education",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3.13",
+	"Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Repository = "https://github.com/celynw/advent_of_code"
+Issues = "https://github.com/celynw/advent_of_code/issues"
+
+[project.optional-dependencies]
+dev = ["kellog", "mypy", "pytest", "ruff"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+	"W191",   # Indentation contains tabs
+	"D212",   # Multi-line docstring summary should start at the first line
+	"D203",   # 1 blank line required before class docstring
+	"D413",   # Missing blank line after last section
+	"TD003",  # Missing issue link on the line following this TODO
+	"INP001", # File {filename} is part of an implicit namespace package. Add an __init__.py.
+	"D100",   # Missing docstring in public module
+	"E741",   # Ambiguous variable name: {name}
+	"CPY001", # Missing copyright notice at top of file
+	"T201",   # `print` found
+]
+unfixable = [
+	"F401", # {name} imported but unused; consider using importlib.util.find_spec to test for availability
+	"F841", # Local variable {name} is assigned to but never used
+	"B007", # Loop control variable {name} not used within loop body
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+
+[tool.ruff.lint.pylint]
+allow-magic-value-types = ["str", "bytes", "int"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = [
+	"S101",   # Use of assert detected
+	"SLF001", # Private member accessed
+	"INP001", # Use of assert detected
+	"D100",   # Missing docstring in public module
+]
+"__init__.py" = [
+	"F401", # Imported but unused
+]

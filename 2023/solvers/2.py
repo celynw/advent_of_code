@@ -39,7 +39,6 @@ def solve(lines: list[str]) -> int:
 	return sum(calibration_values)
 
 
-
 def _convert_words_to_digits(string: str) -> str:
 	"""Replace all words in a string with their digit equivalent."""
 	for word, digit in digitmap.items():
