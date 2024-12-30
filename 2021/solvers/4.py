@@ -3,7 +3,6 @@ from typing import List
 
 from kellog import info, warning, error, debug
 
-# ==================================================================================================
 def solve(lines: List[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 

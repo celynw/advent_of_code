@@ -4,7 +4,6 @@ from typing import List
 import numpy as np
 from kellog import info, warning, error, debug
 
-# ==================================================================================================
 def solve(lines: List[str]) -> int:
 	numbers = [int(n) for n in lines.pop(0).split(",")]
 	debug(f"Number of numbers: {len(numbers)}")

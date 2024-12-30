@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-import colored_traceback.auto  # noqa: F401
 
 
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	won = {}
@@ -28,7 +26,6 @@ def solve(lines: list[str]) -> int:
 	return total
 
 
-# ======================================================================================================================
 def accumulate_cards(won: dict[int, list[int]], index: int, indent: str = "") -> int:
 	"""Recurse and count the total number of won cards."""
 	connected = won.get(index, [])

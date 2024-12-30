@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from rich import print, inspect
 
-# ==================================================================================================
 def solve(lines: list[str]) -> int:
 	forest = []
 	for line in lines:

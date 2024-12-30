@@ -3,7 +3,6 @@ import math
 
 from rich import print, inspect
 
-# ==================================================================================================
 def solve(lines: list[str]) -> int:
 	forest = []
 	for line in lines:
@@ -16,7 +15,6 @@ def solve(lines: list[str]) -> int:
 	return max(scores)
 
 
-# ==================================================================================================
 def score(tree_x: int, tree_y: int, forest: list[list[int]]) -> int:
 	tree_height = forest[tree_y][tree_x]
 	all_seen = []

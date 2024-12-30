@@ -4,13 +4,11 @@ import importlib
 from pathlib import Path
 from typing import cast
 
-import colored_traceback.auto  # noqa: F401
 from colorama import Fore
 
 import utils
 
 
-# ======================================================================================================================
 def _main(args: argparse.Namespace) -> None:
 	try:
 		solver = importlib.import_module(f"{args.year}.solvers.{args.puzzle}")
@@ -32,7 +30,6 @@ def _main(args: argparse.Namespace) -> None:
 		print(f"{status} {answer} vs. {result}")  # noqa: T201
 
 
-# ======================================================================================================================
 def _parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("year", type=int, help="Year of puzzle")
@@ -42,6 +39,5 @@ def _parse_args() -> argparse.Namespace:
 	return parser.parse_args()
 
 
-# ======================================================================================================================
 if __name__ == "__main__":
 	_main(_parse_args())

@@ -3,7 +3,6 @@ from rich import print, inspect
 
 sizes = []
 
-# ==================================================================================================
 def solve(lines: list[str]) -> int:
 	tree, size = explore(lines)
 	sizes.append(size)
@@ -19,7 +18,6 @@ def solve(lines: list[str]) -> int:
 	raise ValueError(f"Didn't find a suitable directory")
 
 
-# ==================================================================================================
 def explore(lines: list[str]) -> tuple[dict, int]:
 	tree = {}
 	size = 0

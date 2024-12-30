@@ -3,7 +3,6 @@ from typing import List
 
 from kellog import info, warning, error, debug
 
-# ==================================================================================================
 def solve(lines: List[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
@@ -26,7 +25,6 @@ def solve(lines: List[str]) -> int:
 	return oxygenRating * co2Rating
 
 
-# ==================================================================================================
 def get_common(values: List[int]) -> int:
 	assert len(values) > 0
 

@@ -2,10 +2,7 @@
 import operator
 from functools import reduce
 
-import colored_traceback.auto  # noqa: F401
 
-
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	powers = []

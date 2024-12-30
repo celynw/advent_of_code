@@ -4,7 +4,6 @@ import math
 
 from kellog import info, warning, error, debug
 
-# ==================================================================================================
 def solve(lines: List[str]) -> int:
 	crabs = [int(c) for c in lines[0].split(",")]
 	debug(f"Total number of crabs: {len(crabs)}")
@@ -23,7 +22,6 @@ def solve(lines: List[str]) -> int:
 	return fuel
 
 
-# ==================================================================================================
 def calc_fuel(crabs: List[int], p: int) -> int:
 	fuel = 0
 	for c in crabs:

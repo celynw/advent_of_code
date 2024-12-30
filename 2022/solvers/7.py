@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from rich import print, inspect
 
-# ==================================================================================================
 def solve(lines: list[str]) -> int:
 	redundant = 0
 	for line in lines:

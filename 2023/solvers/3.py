@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import colored_traceback.auto  # noqa: F401
 
 query = {
 	"red": 12,
@@ -8,7 +7,6 @@ query = {
 }
 
 
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	possible_ids = []

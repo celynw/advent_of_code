@@ -3,7 +3,6 @@ from rich import print, inspect
 
 sizes = []
 
-# ==================================================================================================
 def solve(lines: list[str]) -> int:
 	tree, size = explore(lines)
 	if size < 100000:
@@ -13,7 +12,6 @@ def solve(lines: list[str]) -> int:
 	return sum(sizes)
 
 
-# ==================================================================================================
 def explore(lines: list[str]) -> tuple[dict, int]:
 	tree = {}
 	size = 0

@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-import colored_traceback.auto  # noqa: F401
 
 digitmap = {s: i for i, s in enumerate("zero one two three four five six seven eight nine".split())}
 N_DIGITS = 2
 
 
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	calibration_values = []
@@ -41,7 +39,7 @@ def solve(lines: list[str]) -> int:
 	return sum(calibration_values)
 
 
-# ======================================================================================================================
+
 def _convert_words_to_digits(string: str) -> str:
 	"""Replace all words in a string with their digit equivalent."""
 	for word, digit in digitmap.items():

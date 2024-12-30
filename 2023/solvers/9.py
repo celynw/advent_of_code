@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-import colored_traceback.auto  # noqa: F401
 
 
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	targets = [int(s) for s in lines.pop(0).split(" ")[1:]]
@@ -22,7 +20,6 @@ def solve(lines: list[str]) -> int:
 	return min(targets)
 
 
-# ======================================================================================================================
 def parse(lines: list[str]) -> dict[str, list[list[int]]]:
 	"""Extract maps from input lines."""
 	maps = {}

@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 import re
 
-import colored_traceback.auto  # noqa: F401
 
-
-# ======================================================================================================================
 def solve(lines: list[str]) -> int:  # noqa: C901
 	"""Print and return the solution. Called by ../solve.py."""
 	parts = []
 	gears = []
-	for l, line in enumerate(lines):  # noqa: E741
+	for l, line in enumerate(lines):
 		for m in re.finditer(r"\d+", line):
 			span_l, span_r = m.span()
 			span_l = max(0, span_l - 1)
