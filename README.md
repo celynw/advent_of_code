@@ -5,10 +5,12 @@
 ![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/celynw/advent_of_code/2023%2Fsolvers?type=file&extension=py&label=2023%20progress)\
 ![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/celynw/advent_of_code/2024%2Fsolvers?type=file&extension=py&label=2024%20progress)
 
-## Requirements
+## Setup
 
 ```bash
-pip install -r requirements.txt
+uv venv -p 3.13
+source .venv/bin/activate
+uv pip install .
 ```
 
 ## Usage
