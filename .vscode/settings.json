@@ -1,7 +1,5 @@
 {
-	// To be overridden by ruff.toml
-	"ruff.format.args": [],
-	"ruff.lint.args": [],
+	// To be overridden in pyproject.toml
 	"editor.insertSpaces": false,
 	"[yml]": {
 		"editor.insertSpaces": true,

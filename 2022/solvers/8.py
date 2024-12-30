@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-from rich import print, inspect
+from rich import print
+
 
 def solve(lines: list[str]) -> int:
 	redundant = 0

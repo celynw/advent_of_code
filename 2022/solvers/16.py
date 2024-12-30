@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
 import math
 
-from rich import print, inspect
+from rich import print
+
 
 def solve(lines: list[str]) -> int:
 	forest = []
@@ -50,6 +50,5 @@ def score(tree_x: int, tree_y: int, forest: list[list[int]]) -> int:
 		if forest[y][tree_x] >= tree_height:
 			break
 	all_seen.append(seen)
-
 
 	return math.prod(all_seen)

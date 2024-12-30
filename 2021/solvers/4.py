@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
-from typing import List
+from kellog import debug, info
 
-from kellog import info, warning, error, debug
 
-def solve(lines: List[str]) -> int:
+def solve(lines: list[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
 	distance = 0
@@ -13,7 +11,7 @@ def solve(lines: List[str]) -> int:
 		direction, amount = line.split(" ")
 		if direction == "forward":
 			distance += int(amount)
-			depth += (aim * int(amount))
+			depth += aim * int(amount)
 		elif direction == "down":
 			aim += int(amount)
 		elif direction == "up":

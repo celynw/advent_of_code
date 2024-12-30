@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import operator
 from functools import reduce
 
@@ -23,6 +22,6 @@ def solve(lines: list[str]) -> int:
 				fewest[pair[1]] = max(fewest[pair[1]], int(pair[0]))
 		powers.append(reduce(operator.mul, fewest.values(), 1))
 
-	print(sum(powers))  # noqa: T201
+	print(sum(powers))
 
 	return sum(powers)

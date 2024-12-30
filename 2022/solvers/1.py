@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
-from rich import print, inspect
+from rich import print
+
 
 def solve(lines: list[str]) -> int:
 	all_calories = []
 	calories = 0
 	for line in lines:
-		if line == "":
+		if not line:
 			all_calories.append(calories)
 			calories = 0
 		else:

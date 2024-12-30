@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	won = {}
@@ -21,7 +18,7 @@ def solve(lines: list[str]) -> int:
 	for w in won:
 		total += accumulate_cards(won, w)
 
-	print(total)  # noqa: T201
+	print(total)
 
 	return total
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 digitmap = {s: i for i, s in enumerate("zero one two three four five six seven eight nine".split())}
 N_DIGITS = 2
 
@@ -34,7 +32,7 @@ def solve(lines: list[str]) -> int:
 
 		calibration_values.append(int(calibration_value))
 
-	print(sum(calibration_values))  # noqa: T201
+	print(sum(calibration_values))
 
 	return sum(calibration_values)
 

@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
-from typing import List
+from kellog import debug, info
 
-from kellog import info, warning, error, debug
 
-def solve(lines: List[str]) -> int:
+def solve(lines: list[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
 	distance = 0

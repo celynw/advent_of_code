@@ -1,25 +1,23 @@
-#!/usr/bin/env python3
-from typing import List
+from kellog import debug, info
 
-from kellog import info, warning, error, debug
 
-def solve(lines: List[str]) -> int:
+def solve(lines: list[str]) -> int:
 	debug(f"Number of commands: {len(lines)}")
 
 	indices = {}
 	for line in lines:
 		for i, n in enumerate(line):
 			indices[i] = indices.get(i, 0) + int(n)
-	gammaRate = []
-	epsilonRate = []
+	gamma_rate = []
+	epsilon_rate = []
 	for index in indices.values():
-		gammaRate.append(int(index > len(lines) - index))
-		epsilonRate.append(int(index < len(lines) - index))
-	gammaRate = int("".join(map(str, gammaRate)), 2)
-	epsilonRate = int("".join(map(str, epsilonRate)), 2)
+		gamma_rate.append(int(index > len(lines) - index))
+		epsilon_rate.append(int(index < len(lines) - index))
+	gamma_rate = int("".join(map(str, gamma_rate)), 2)
+	epsilon_rate = int("".join(map(str, epsilon_rate)), 2)
 
-	info(f"gammaRate: {gammaRate}")
-	info(f"epsilonRate: {epsilonRate}")
-	info(f"Power consumption: {gammaRate * epsilonRate}")
+	info(f"gamma_rate: {gamma_rate}")
+	info(f"epsilon_rate: {epsilon_rate}")
+	info(f"Power consumption: {gamma_rate * epsilon_rate}")
 
-	return gammaRate * epsilonRate
+	return gamma_rate * epsilon_rate

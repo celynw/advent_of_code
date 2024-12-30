@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 query = {
 	"red": 12,
 	"green": 13,
@@ -26,6 +24,6 @@ def solve(lines: list[str]) -> int:
 		if possible:
 			possible_ids.append(game_id)
 
-	print(sum(possible_ids))  # noqa: T201
+	print(sum(possible_ids))
 
 	return sum(possible_ids)

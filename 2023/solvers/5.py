@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import re
 
 
@@ -16,9 +15,9 @@ def solve(lines: list[str]) -> int:
 				# Check below
 				or (l < len(lines) - 1 and re.search(r"[^.\d]", lines[l + 1][span_l:span_r]))
 				# Check left
-				or line[span_l : m.span()[0]] not in ["", "."]
+				or line[span_l : m.span()[0]] not in {"", "."}
 				# Check right
-				or line[m.span()[1] : span_r] not in ["", "."]
+				or line[m.span()[1] : span_r] not in {"", "."}
 			):
 				part_numbers.append(int(m.group()))
 

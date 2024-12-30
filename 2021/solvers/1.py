@@ -1,24 +1,22 @@
-#!/usr/bin/env python3
-from typing import List
+from kellog import debug, info
 
-from kellog import info, warning, error, debug
 
-def solve(lines: List[str]) -> int:
+def solve(lines: list[str]) -> int:
 	debug(f"Number of depth measurements: {len(lines)}")
 
-	prevDepth = None
+	prev_depth = None
 	increased = 0
 	decreased = 0
 	for line in lines:
-		currDepth = int(line)
-		if prevDepth is None:
-			prevDepth = currDepth
+		curr_depth = int(line)
+		if prev_depth is None:
+			prev_depth = curr_depth
 			continue
-		if currDepth > prevDepth:
+		if curr_depth > prev_depth:
 			increased += 1
-		elif currDepth < prevDepth:
+		elif curr_depth < prev_depth:
 			decreased += 1
-		prevDepth = currDepth
+		prev_depth = curr_depth
 
 	info(f"Decreased: {decreased}")
 	info(f"Increased: {increased}")

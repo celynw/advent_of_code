@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import re
 
 
@@ -30,20 +29,20 @@ def solve(lines: list[str]) -> int:  # noqa: C901
 		# Above and below
 		candidates = []
 		for name, (span_l, span_r), part_y in parts:
-			if span_l <= gear_x < span_r and gear_y in [part_y - 1, part_y + 1]:
+			if span_l <= gear_x < span_r and gear_y in {part_y - 1, part_y + 1}:
 				candidates.append(int(name))
-		if len(candidates) == 2:  # noqa: PLR2004
+		if len(candidates) == 2:
 			ratios.append(candidates[0] * candidates[1])
 			continue
 
 		# Left and right
 		candidates = []
 		for name, (span_l, span_r), part_y in parts:
-			if gear_x in [span_l, span_r - 1] and gear_y in [part_y - 1, part_y, part_y + 1]:
+			if gear_x in {span_l, span_r - 1} and gear_y in {part_y - 1, part_y, part_y + 1}:
 				candidates.append(int(name))
-		if len(candidates) == 2:  # noqa: PLR2004
+		if len(candidates) == 2:
 			ratios.append(candidates[0] * candidates[1])
 
-	print(sum(ratios))  # noqa: T201
+	print(sum(ratios))
 
 	return sum(ratios)

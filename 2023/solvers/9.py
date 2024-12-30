@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	targets = [int(s) for s in lines.pop(0).split(" ")[1:]]
@@ -15,7 +12,7 @@ def solve(lines: list[str]) -> int:
 					break
 				targets[s] = seed
 
-	print(min(targets))  # noqa: T201
+	print(min(targets))
 
 	return min(targets)
 
@@ -26,11 +23,11 @@ def parse(lines: list[str]) -> dict[str, list[list[int]]]:
 	name = ""
 	these_maps = []
 	for line in lines:
-		if line == "":
+		if not line:
 			continue
 
 		if ":" in line:
-			if name != "":
+			if name:
 				maps[name] = these_maps
 			name, _ = line.split(" ")
 			these_maps = []

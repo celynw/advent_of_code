@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-from rich import print, inspect
+from rich import print
+
 
 def solve(lines: list[str]) -> int:
 	mapping = {
@@ -20,9 +20,9 @@ def solve(lines: list[str]) -> int:
 		# Score for the result
 		result = (possibilities.index(you) - possibilities.index(opponent)) % len(possibilities)
 		match result:
-			case _ if result == 0: # draw
+			case _ if result == 0:  # draw
 				score += 3
-			case _ if result == 1: # win
+			case _ if result == 1:  # win
 				score += 6
 			# case _: # lose
 	print(score)

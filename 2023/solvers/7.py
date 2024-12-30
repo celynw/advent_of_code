@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 def solve(lines: list[str]) -> int:
 	"""Print and return the solution. Called by ../solve.py."""
 	scores = []

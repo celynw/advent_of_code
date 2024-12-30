@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
 from typing import List
 
-from kellog import info, warning, error, debug
+from kellog import debug, error, info, warning
 
-def solve(lines: List[str]) -> int:
+
+def solve(lines: list[str]) -> int:
 	crabs = [int(c) for c in lines[0].split(",")]
 	debug(f"Total number of crabs: {len(crabs)}")
 
@@ -21,7 +21,7 @@ def solve(lines: List[str]) -> int:
 	return fuel
 
 
-def calc_fuel(crabs: List[int], p: int) -> int:
+def calc_fuel(crabs: list[int], p: int) -> int:
 	fuel = 0
 	for c in crabs:
 		f = abs(c - p)
